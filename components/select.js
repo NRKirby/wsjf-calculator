@@ -14,7 +14,7 @@ export default function Select({ label, setValue, optionArray }) {
                     onChange={(e) => setValue(e.target.value)}
                 >
                     <option value={null}>Please select</option>
-                    {optionArray.map(opt => <option value={opt.value}>{opt.name}</option>)}
+                    {optionArray.map(opt => <option key={opt.value} value={opt.value}>{opt.name}</option>)}
                 </select>
             </div>
     )
