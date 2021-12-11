@@ -3,9 +3,9 @@ import Select from '../components/select'
 
 export default function Home() {
 
-  const ValueOptions = [{value:5, name: 'Killer'},{value:2, name: 'Bonus'},{value:1, name: 'Meh'}];
-  const UrgencyOptions = [{value:5, name: 'ASAP'},{value:2, name: 'Soon'},{value:1, name: 'Whenever'}];
-  const EstimateOptions = [{value: 1, name: '1'},{value: 2, name: '2'},{value: 3, name: '3'},{value: 5, name: '5'},{value: 8, name: '8'},{value: 13, name: '13'},{value: 21, name: '21'}];
+  const ValueOptions = [{ value: 5, name: 'Killer' }, { value: 2, name: 'Bonus' }, { value: 1, name: 'Meh' }];
+  const UrgencyOptions = [{ value: 5, name: 'ASAP' }, { value: 2, name: 'Soon' }, { value: 1, name: 'Whenever' }];
+  const EstimateOptions = [{ value: 1, name: '1' }, { value: 2, name: '2' }, { value: 3, name: '3' }, { value: 5, name: '5' }, { value: 8, name: '8' }, { value: 13, name: '13' }, { value: 21, name: '21' }];
 
   const [selectedValue, setSelectedValue] = useState();
   const [selectedUrgency, setSelectedUrgency] = useState();
@@ -35,36 +35,40 @@ export default function Home() {
 
 
   return (
-    <div className="flex p-8">
-  
-      <Select 
-          label={'Value'} 
-          setValue={setSelectedValue}
-          optionArray={ValueOptions} />
-      
-      <Select 
-          label={'Urgency'}
-          setValue={setSelectedUrgency}
-          optionArray={UrgencyOptions} />
-      
-      <Select
-          label={'Estimate'} 
-          setValue={setSelectedEstimate}
-          optionArray={EstimateOptions} />
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto">
+        <div className="md:flex md:mt-20 p-8">
 
-      <div className="w-36 mx-4">
-        <label htmlFor="total" className="block text-sm font-medium text-gray-700">
-          Total
-        </label>
-        <div className="mt-1">
-          <input
-            type="text"
-            name="total"
-            id="total"
-            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-            value={isNaN(total) ? 0 : total.toFixed(1)}
-            readOnly
-          />
+          <Select
+            label={'Value'}
+            setValue={setSelectedValue}
+            optionArray={ValueOptions} />
+
+          <Select
+            label={'Urgency'}
+            setValue={setSelectedUrgency}
+            optionArray={UrgencyOptions} />
+
+          <Select
+            label={'Estimate'}
+            setValue={setSelectedEstimate}
+            optionArray={EstimateOptions} />
+
+          <div className="w-40 m-4">
+            <label htmlFor="total" className="block text-sm font-medium text-gray-700">
+              Total
+            </label>
+            <div className="mt-1">
+              <input
+                type="text"
+                name="total"
+                id="total"
+                className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                value={isNaN(total) ? 0 : total.toFixed(1)}
+                readOnly
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
