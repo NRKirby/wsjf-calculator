@@ -64,7 +64,7 @@ export default function Home() {
                 name="total"
                 id="total"
                 className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                value={isNaN(total) ? 0 : total === 0 ? total : total.toFixed(2)}
+                value={isNaN(total) ? 0 : parseFloat(total.toFixed(2))}
                 readOnly
               />
             </div>
